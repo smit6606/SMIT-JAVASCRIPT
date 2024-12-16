@@ -35,11 +35,11 @@ Definition: Adds one or more elements to the end of an array.
 Syntax: array.push(element1, element2, ...);
 */
 
-let arr = [1, 2, 3];
-arr.push(4);
-console.log(arr);
+let array = [1,2,3,4]
+array.push(5);
+console.log(array);
 
-// Output: [1, 2, 3, 4]
+// Output: [1, 2, 3, 4, 5]
 
 // ------------------------------------------------------------------------------------------------------
 
@@ -50,11 +50,10 @@ Definition: Removes the last element from an array and returns that element.
 Syntax: array.pop();
 */
 
-let arr = [1, 2, 3];
-arr.pop();
-console.log(arr);
+array.pop();
+console.log(array);
 
-// Output: [1, 2]
+// Output: [1, 2, 3, 4]
 
 // ------------------------------------------------------------------------------------------------------
 
@@ -65,11 +64,10 @@ Definition: Removes the first element from an array and returns it.
 Syntax:array.shift();
 */
 
-let arr = [1, 2, 3];
-arr.shift();
-console.log(arr);
+array.shift();
+console.log(array);
 
-// Output: [2, 3]
+// Output: [2, 3, 4]
 
 // ------------------------------------------------------------------------------------------------------
 
@@ -80,11 +78,10 @@ Definition: Adds one or more elements to the beginning of an array and returns t
 Syntax: array.unshift(element1, element2, ...);
 */
 
-let arr = [2, 3];
-arr.unshift(1);
-console.log(arr);
+array.unshift(1);
+console.log(array);
 
-// Output: [1, 2, 3]
+// Output: [1, 2, 3, 4]
 
 // ------------------------------------------------------------------------------------------------------
 
@@ -95,11 +92,10 @@ Definition: Adds, removes, or replaces elements in an array.
 Syntax: array.splice(start, deleteCount, item1, item2, ...);
 */
 
-let arr = [1, 2, 4];
-arr.splice(2, 0, 3); // Add 3 at index 2
-console.log(arr);
+array.splice(4, 0, 5); // Add 3 at index 2
+console.log(array);
 
-// Output: [1, 2, 3, 4]
+// Output: [1, 2, 3, 4, 5]
 
 // ------------------------------------------------------------------------------------------------------
 
@@ -110,8 +106,7 @@ Definition: Returns a shallow copy of a portion of an array without modifying it
 Syntax: array.slice(start, end);
 */
 
-let arr = [1, 2, 3, 4];
-let sliced = arr.slice(1, 3);
+let sliced = array.slice(1, 3);
 console.log(sliced);
 
 // Output: [2, 3]
@@ -141,12 +136,11 @@ Definition: Checks if an array contains a specific value.Returns true or false.
 Syntax: array.includes(element, startIndex);
 */
 
-let arr = [1, 2, 3];
-console.log(arr.includes(2));
+console.log(array.includes(2));
 
 // Output: true
 
-console.log(arr.includes(5));
+console.log(array.includes(6));
 
 // Output: false
 
@@ -155,18 +149,17 @@ console.log(arr.includes(5));
 /*
 9. INDEXOF()
 
-Definition: Returns the index of the first occurrence of a value, or - 1 if not found.
+Definition: Returns the index of the first occurrence of a value, 1 or - 1 if not found.
 Syntax: array.indexOf(element, startIndex);
 */
 
-let arr = [1, 2, 3];
-console.log(arr.indexOf(2));
+console.log(array.indexOf(2));
 
 // Output: 1
 
-console.log(arr.indexOf(5));
+console.log(array.indexOf(5));
 
-// Output: -1
+// Output: 4
 
 // ------------------------------------------------------------------------------------------------------
 
@@ -177,9 +170,9 @@ Definition: Returns the first element that satisfies a condition.
 Syntax: array.find(callback);
 */
 
-let arr = [1, 2, 3, 4];
-let found = arr.find(num => num > 2);
-console.log(found);
+// let arr = [1, 2, 3, 4];
+// let found = arr.find(num => num > 2);
+// console.log(found);
 
 // Output: 3
 
@@ -190,9 +183,9 @@ Definition: Creates a new array by applying a function to each element.
 Syntax: array.map(callback);
 */
 
-let arr = [1, 2, 3];
-let doubled = arr.map(num => num * 2);
-console.log(doubled);
+// let arr = [1, 2, 3];
+// let doubled = arr.map(num => num * 2);
+// console.log(doubled);
 
 // Output: [2, 4, 6]
 
@@ -205,9 +198,9 @@ Definition: Sorts the elements of an array(default is lexicographical).
 Syntax: array.sort(compareFunction);
 */
 
-let arr = [3, 1, 4, 2];
-arr.sort((a, b) => a - b); // Ascending order
-console.log(arr);
+// let arr = [3, 1, 4, 2];
+// arr.sort((a, b) => a - b); // Ascending order
+// console.log(arr);
 
 // Output: [1, 2, 3, 4]
 
@@ -220,9 +213,9 @@ Definition: Reverses the order of elements in an array.
 Syntax: array.reverse();
 */
 
-let arr = [1, 2, 3];
-arr.reverse();
-console.log(arr);
+// let arr = [1, 2, 3];
+// arr.reverse();
+// console.log(arr);
 
 // Output: [3, 2, 1]
 
