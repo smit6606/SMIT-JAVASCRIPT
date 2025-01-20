@@ -4,85 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="form.css">
 </head>
 
 <body>
-    <div align="center">
-        <form id="formvalidation">
-            <div>
-                <h1>Form Validation</h1>
-            </div>
-            <div>
-                <label>
-                    First Name:
-                </label>
-                <input type="text" id="fname" placeholder="Enter your First Name" />
-            </div>
-            <br />
-            <br />
-            <div>
-                <label>
-                    Last Name:
-                </label>
-                <input type="text" id="lname" placeholder="Enter your Last Name" />
-            </div>
-            <br />
-            <br />
-            <div>
-                <label>
-                    Email:
-                </label>
-                <input type="email" id="email" placeholder="Enter your Mail" />
-            </div>
-            <br />
-            <br />
-            <div>
-                <label>
-                    Gender:
-                </label>
-                <input type="radio" id="gender" name="gender" value="male" /> Male
-                <input type="radio" name="gender" value="female" /> Female
-                <input type="radio" name="gender" value="notdecide" /> Not Decide
+    <form id="registerForm">
+        <h1>Registration Form</h1>
 
-            </div>
-            <br />
-            <br />
-            <div>
-                <label>
-                    Password:
-                </label>
-                <input type="password" id="password" placeholder="Enter Your Password" />
-            </div>
-            <br />
-            <br />
-            <div>
-                <label>
-                    Choose your Hobbies:
-                </label>
-                <select name="hobbies" id="hobbies">
-                    <option hidden>Select your Hobbies</option>
-                    <option>Studying</option>
-                    <option>Reading</option>
-                    <option>Cricket</option>
-                    <option>Smoking</option>
-                </select>
-            </div>
-            <br />
-            <br />
-            <div>
-                <label>
-                    Date of birth
-                </label>
-                <input type="date" id="dob" />
-            </div>
-            <br />
-            <br />
-            <button type="submit">
-                Register Form
-            </button>
-        </form>
-    </div>
+        <label for="fname">
+            First Name:
+        </label>
+        <input type="text" id="fname" name="fname">
+        <div id="fnameErr" class="error"></div>
+
+        <label for="lname">
+            Last Name:
+        </label>
+        <input type="text" id="lname" name="lname">
+        <div id="lnameErr" class="error"></div>
+
+        <label for="email">
+            Email:
+        </label>
+        <input type="email" id="email" name="email">
+        <div id="emailErr" class="error"></div>
+
+        <label for="pass">
+            Password:
+        </label>
+        <input type="password" id="pass" name="pass">
+        <div id="passErr" class="error"></div>
+
+        <label for="dob">
+            Date of Birth:
+        </label>
+        <input type="date" id="dob" name="dob">
+        <div id="dobErr" class="error"></div>
+
+        <label for="hobbies">
+            Hobbies:
+        </label>
+        <select id="hobbies" name="hobbies">
+            <option value="" hidden>--Select One--</option>
+            <option value="reading">Reading</option>
+            <option value="sports">Sports</option>
+            <option value="music">Music</option>
+        </select>
+        <div id="hobbiesErr" class="error"></div>
+
+        <label>
+            Gender:
+        </label>
+        <div class="radio-group">
+            <label for="male">
+                <input type="radio" id="male" name="gender" value="male"> Male
+            </label>
+            <label for="female">
+                <input type="radio" id="female" name="gender" value="female"> Female
+            </label>
+            <label for="other">
+                <input type="radio" id="other" name="gender" value="other"> Other
+            </label>
+        </div>
+        <div id="genderErr" class="error"></div>
+
+        <button type="submit">
+            Submit
+        </button>
+    </form>
 
     <script src="form.js"></script>
 </body>
