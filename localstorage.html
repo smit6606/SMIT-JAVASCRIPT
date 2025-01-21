@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with LocalStorage</title>
+    <link rel="stylesheet" href="localstorage.css">
+</head>
+
+<body>
+    <div style="display: flex; gap: 30px; justify-content: center; align-items: flex-start;">
+        <!-- Registration Form -->
+        <form id="registerForm">
+            <h1>Registration Form</h1>
+
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname">
+            <div id="fnameErr" class="error"></div>
+
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname">
+            <div id="lnameErr" class="error"></div>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <div id="emailErr" class="error"></div>
+
+            <label for="pass">Password:</label>
+            <input type="password" id="pass" name="pass">
+            <div id="passErr" class="error"></div>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob">
+            <div id="dobErr" class="error"></div>
+
+            <label for="hobbies">Hobbies:</label>
+            <select id="hobbies" name="hobbies">
+                <option value="" hidden>--Select One--</option>
+                <option value="reading">Reading</option>
+                <option value="sports">Sports</option>
+                <option value="music">Music</option>
+            </select>
+            <div id="hobbiesErr" class="error"></div>
+
+            <label>Gender:</label>
+            <div class="radio-group">
+                <label for="male"><input type="radio" id="male" name="gender" value="male"> Male</label>
+                <label for="female"><input type="radio" id="female" name="gender" value="female"> Female</label>
+                <label for="other"><input type="radio" id="other" name="gender" value="other"> Other</label>
+            </div>
+            <div id="genderErr" class="error"></div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Display Table -->
+        <div>
+            <h1>Stored Details</h1>
+            <table border="1" id="viewDetails">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Date of Birth</th>
+                        <th>Hobby</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="localstorage.js"></script>
+</body>
+
+</html>
