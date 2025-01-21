@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Form</title>
+    <link rel="stylesheet" href="local.css">
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <h1>Welcome to My Library</h1>
+            <hr>
+
+            <!-- Username -->
+            <label for="username">User Name:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required
+                autocomplete="username">
+            <p>We'll never share your username with anyone else.</p>
+
+            <!-- Book Name -->
+            <label for="bookname">Book Name:</label>
+            <input type="text" id="bookname" name="bookname" placeholder="Enter book name" required autocomplete="off">
+
+            <!-- Book Type -->
+            <label for="bookname">Book Type:</label>
+            <fieldset>
+                <div class="book-type">
+                    <div>
+                        <label for="holy">Holy</label>
+                        <input type="radio" id="holy" name="booktype" value="holy" autocomplete="off">
+                    </div>
+                    <div>
+                        <label for="programming">Programming</label>
+                        <input type="radio" id="programming" name="booktype" value="Programming" autocomplete="off">
+                    </div>
+                    <div>
+                        <label for="cooking">Cooking</label>
+                        <input type="radio" id="cooking" name="booktype" value="Cooking" autocomplete="off">
+                    </div>
+                    <div>
+                        <label for="history">History</label>
+                        <input type="radio" id="history" name="booktype" value="History" autocomplete="off">
+                    </div>
+                    <div>
+                        <label for="general-knowledge">General Knowledge</label>
+                        <input type="radio" id="general-knowledge" name="booktype" value="General Knowledge"
+                            autocomplete="off">
+                    </div>
+                    <div>
+                        <label for="science">Science</label>
+                        <input type="radio" id="science" name="booktype" value="Science" autocomplete="off">
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Submit Button -->
+            <button type="button" onclick="addBook()">Add Book</button>
+        </form>
+
+        <hr>
+
+        <!-- Book Table -->
+        <table>
+            <caption>List of Issued Books</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Sr No.</th>
+                    <th scope="col">Date of Issue</th>
+                    <th scope="col">Reader</th>
+                    <th scope="col">Book Name</th>
+                    <th scope="col">Genre</th>
+                </tr>
+            </thead>
+            <tbody id="bookTable">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="local.js"></script>
+</body>
+
+</html>
