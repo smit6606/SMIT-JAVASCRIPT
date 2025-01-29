@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --theme-red: #F50514;
+    --theme-dark: #333333;
+    --theme-white: #ffffff;
+    --theme-gray: #f4f4f4;
+    --theme-border: #e6e6e6;
+    --theme-hover-bg: rgba(255, 255, 255, 0.15);
+    --theme-font-family: 'Open Sans', sans-serif;
+    --theme-text: 'Montserrat';
+}
+
+body {
+    font-family: var(--theme-font-family);
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.d-none {
+    display: none;
+}
+
+/* Navbar Links */
+.navbar-nav {
+    font-family: var(--theme-text);
+}
+
+.nav-link {
+    padding: 10px 20px;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--theme-red) !important;
+}
+
+/* Underline on Hover for Navbar Links */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--theme-red);
+    visibility: hidden;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover::after {
+    visibility: visible;
+}
+
+/* Store Dropdown Menu */
+.nav-item.dropdown {
+    position: relative;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    position: absolute;
+    background-color: var(--theme-white);
+    width: 130vh;
+    height: 70vh;
+    top: 94px;
+    left: 0;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 10px 0;
+    display: none;
+}
+
+/* Dropdown Menu Content */
+.store-menu-content {
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.store-menu-section {
+    margin-bottom: 15px;
+}
+
+.store-menu-section h5 {
+    font-size: 18px;
+    color: var(--theme-dark);
+    margin-bottom: 10px;
+}
+
+.store-menu-section a {
+    display: block;
+    font-size: 16px;
+    color: var(--theme-dark);
+    margin-bottom: 8px;
+}
+
+/* Account and Cart Icons */
+.nav-link i {
+    font-size: 18px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.btn-red {
+    background-color: var(--theme-red);
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.btn-red:hover {
+    background-color: #D4000B;
+}
+
+.cart-logo {
+    font-size: 22px;
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -6px;
+    right: -7px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 4px;
+    font-size: 10px;
+}
+
+.card {
+    margin: 15px;
+    border: none;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    height: 200px;
+    object-fit: contain;
+}
+
+/* Banner Section Styles */
+.banner-section {
+    position: relative;
+    width: 100%;
+    max-height: 450px;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+}
+
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.banner-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: var(--theme-text);
+}
+
+.banner-subtitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-family: var(--theme-font-family);
+}
+
+.banner-btn {
+    font-size: 16px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    background-color: var(--theme-red);
+    color: white;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.banner-btn:hover {
+    background-color: transparent;
+}
+
+/* Footer Section Styles */
+.footer {
+    background-color: var(--theme-dark);
+    padding: 30px 0;
+}
+
+.footer-text {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    font-size: 14px;
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--theme-red);
+}
+
+.social-icons a {
+    font-size: 24px;
+    color: white;
+    margin: 0 15px;
+}
+
+.social-icons a:hover {
+    color: var(--theme-red);
+}
+
+/* Section for cart and product toggling */
+#cart-section {
+    padding: 40px;
+    background-color: #f9f9f9;
+}
