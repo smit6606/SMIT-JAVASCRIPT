@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Counter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="word-counter">
+      <div class="count-items">
+        <div class="items">
+          <span class="word-count">0</span>
+          <p>Words</p>
+        </div>
+        <div class="items">
+          <span class="character-count">0</span>
+          <p>Characters</p>
+        </div>
+        <div class="items">
+          <span class="sentence-count">0</span>
+          <p>Sentences</p>
+        </div>
+        <div class="items">
+          <span class="paragraph-count">0</span>
+          <p>Paragraphs</p>
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="text-container">
+        <textarea
+          class="input-text"
+          rows="13"
+          id="input-text"
+          placeholder="Start Typing, Copy & Paste your Text here....."
+          aria-label="Text input for word counter"
+        ></textarea>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
