@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .book-type {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .book-type label {
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .book-type input {
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        table caption {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .actions button {
+            margin-right: 10px;
+            background-color: #ff8c00;
+            color: white;
+        }
+
+        .actions button:hover {
+            background-color: #e07b00;
+        }
+
+        .actions button.delete {
+            background-color: #e74c3c;
+        }
+
+        .actions button.delete:hover {
+            background-color: #c0392b;
+        }
+
+        .edit-form-container {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Add Form -->
+        <form id="addForm">
+            <h1>Welcome to My Library</h1>
+            <hr>
+
+            <label for="username">User Name:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+            <label for="bookname">Book Name:</label>
+            <input type="text" id="bookname" name="bookname" placeholder="Enter book name" required>
+
+            <fieldset>
+                <legend>Book Type:</legend>
+                <div class="book-type">
+                    <div>
+                        <label for="holy">Holy</label>
+                        <input type="radio" id="holy" name="booktype" value="holy">
+                    </div>
+                    <div>
+                        <label for="programming">Programming</label>
+                        <input type="radio" id="programming" name="booktype" value="Programming">
+                    </div>
+                    <div>
+                        <label for="cooking">Cooking</label>
+                        <input type="radio" id="cooking" name="booktype" value="Cooking">
+                    </div>
+                    <div>
+                        <label for="history">History</label>
+                        <input type="radio" id="history" name="booktype" value="History">
+                    </div>
+                    <div>
+                        <label for="general-knowledge">General Knowledge</label>
+                        <input type="radio" id="general-knowledge" name="booktype" value="General Knowledge">
+                    </div>
+                    <div>
+                        <label for="science">Science</label>
+                        <input type="radio" id="science" name="booktype" value="Science">
+                    </div>
+                </div>
+            </fieldset>
+
+            <button type="button" onclick="addBook()">Add Book</button>
+        </form>
+
+        <!-- Edit Form -->
+        <form id="editForm" class="edit-form-container">
+            <h1>Edit Book Details</h1>
+            <hr>
+
+            <label for="edit-username">User Name:</label>
+            <input type="text" id="edit-username" name="username" placeholder="Enter your username" required>
+
+            <label for="edit-bookname">Book Name:</label>
+            <input type="text" id="edit-bookname" name="bookname" placeholder="Enter book name" required>
+
+            <fieldset>
+                <legend>Book Type:</legend>
+                <div class="book-type">
+                    <div>
+                        <label for="edit-holy">Holy</label>
+                        <input type="radio" id="edit-holy" name="booktype" value="holy">
+                    </div>
+                    <div>
+                        <label for="edit-programming">Programming</label>
+                        <input type="radio" id="edit-programming" name="booktype" value="Programming">
+                    </div>
+                    <div>
+                        <label for="edit-cooking">Cooking</label>
+                        <input type="radio" id="edit-cooking" name="booktype" value="Cooking">
+                    </div>
+                    <div>
+                        <label for="edit-history">History</label>
+                        <input type="radio" id="edit-history" name="booktype" value="History">
+                    </div>
+                    <div>
+                        <label for="edit-general-knowledge">General Knowledge</label>
+                        <input type="radio" id="edit-general-knowledge" name="booktype" value="General Knowledge">
+                    </div>
+                    <div>
+                        <label for="edit-science">Science</label>
+                        <input type="radio" id="edit-science" name="booktype" value="Science">
+                    </div>
+                </div>
+            </fieldset>
+
+            <button type="button" onclick="saveEditedBook()">Save Changes</button>
+        </form>
+
+        <hr>
+
+        <table>
+            <caption>List of Issued Books</caption>
+            <thead>
+                <tr>
+                    <th>Sr No.</th>
+                    <th>Date of Issue</th>
+                    <th>Reader</th>
+                    <th>Book Name</th>
+                    <th>Genre</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="bookTable">
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        let editIndex = -1;
+
+        // Function to add a new book
+        function addBook() {
+            const username = document.querySelector("#username").value;
+            const bookname = document.querySelector("#bookname").value;
+            const booktype = document.querySelector('input[name="booktype"]:checked');
+
+            if (username && bookname && booktype) {
+                const newBook = {
+                    si: generateSI(),
+                    date: new Date().toLocaleDateString(),
+                    username,
+                    bookname,
+                    booktype: booktype.value
+                };
+
+                // Retrieve existing books from localStorage or initialize as empty array
+                const books = JSON.parse(localStorage.getItem("books")) || [];
+                books.push(newBook);
+
+                // Save updated books list to localStorage
+                localStorage.setItem("books", JSON.stringify(books));
+
+                // Reset form after adding
+                document.querySelector("#addForm").reset();
+                // After adding a book, reload and display the updated list of books
+                displayBooks();
+            } else {
+                alert("Please fill all fields.");
+            }
+        }
+
+        // Function to generate Sr No. based on existing books
+        function generateSI() {
+            return (JSON.parse(localStorage.getItem('books')) || []).length + 1;
+        }
+
+        // Function to display the list of books
+        function displayBooks() {
+            const books = JSON.parse(localStorage.getItem('books')) || [];
+            const bookTable = document.getElementById('bookTable');
+            bookTable.innerHTML = books.map((book, index) => `
+                <tr>
+                    <td>${book.si}</td>
+                    <td>${book.date}</td>
+                    <td>${book.username}</td>
+                    <td>${book.bookname}</td>
+                    <td>${book.booktype}</td>
+                    <td class="actions">
+                        <button onclick="editBook(${index})">Edit</button>
+                        <button class="delete" onclick="deleteBook(${index})">Delete</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Function to delete a book
+        function deleteBook(index) {
+            const books = JSON.parse(localStorage.getItem('books')) || [];
+            books.splice(index, 1);
+            books.forEach((book, i) => book.si = i + 1); // Reorder Sr No.
+            localStorage.setItem('books', JSON.stringify(books));
+            displayBooks();
+        }
+
+        // Function to edit a book
+        function editBook(index) {
+            const books = JSON.parse(localStorage.getItem('books')) || [];
+            const book = books[index];
+
+            // Show the edit form and hide the add form
+            document.querySelector("#editForm").style.display = "block";
+            document.querySelector("#addForm").style.display = "none";
+
+            // Fill in the edit form fields
+            document.querySelector("#edit-username").value = book.username;
+            document.querySelector("#edit-bookname").value = book.bookname;
+
+            // Select the corresponding radio button for booktype
+            document.querySelectorAll('input[name="booktype"]').forEach((radio) => {
+                if (radio.value === book.booktype) {
+                    radio.checked = true;
+                } else {
+                    radio.checked = false;
+                }
+            });
+
+            // Save the index of the book to be edited
+            editIndex = index;
+        }
+
+        // Function to save edited book
+        function saveEditedBook() {
+            const username = document.querySelector("#edit-username").value;
+            const bookname = document.querySelector("#edit-bookname").value;
+            const booktype = document.querySelector('input[name="booktype"]:checked');
+
+            if (username && bookname && booktype) {
+                const books = JSON.parse(localStorage.getItem('books')) || [];
+                const book = books[editIndex];
+                book.username = username;
+                book.bookname = bookname;
+                book.booktype = booktype.value;
+
+                localStorage.setItem('books', JSON.stringify(books));
+                document.querySelector("#editForm").style.display = "none";
+                document.querySelector("#addForm").style.display = "block";
+                displayBooks();
+            } else {
+                alert("Please fill all fields.");
+            }
+        }
+
+        // Initially display books if available
+        displayBooks();
+    </script>
+</body>
+
+</html>
