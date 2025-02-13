@@ -1,0 +1,120 @@
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <!-- Income Section -->
+        <div class="income-container">
+          <h3>Income</h3>
+          <input
+            type="number"
+            id="income-amount"
+            placeholder="Enter Income Amount"
+          />
+          <input
+            type="text"
+            id="income-note"
+            placeholder="Add Note (Optional)"
+          />
+          <input type="date" id="income-date" />
+          <button class="submit" id="add-income">Add Income</button>
+        </div>
+
+        <!-- Expense Section -->
+        <div class="expense-container">
+          <h3>Expenses</h3>
+          <select id="expense-category">
+            <option value="food">Food</option>
+            <option value="petrol">Petrol</option>
+            <option value="college-fees">College Fees</option>
+            <option value="tution-fee">Tution Fee</option>
+            <option value="stationary">Stationary</option>
+            <option value="house-items">House Items</option>
+            <option value="fruits">Fruits</option>
+            <option value="vegetables">Vegetables</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="health">Health</option>
+            <option value="transport">Transport</option>
+            <option value="shopping">Shopping</option>
+            <option value="bills">Bills</option>
+            <option value="travel">Travel</option>
+            <option value="other">Other</option>
+          </select>
+          <input
+            type="number"
+            id="expense-amount"
+            placeholder="Enter Expense Amount"
+          />
+          <input
+            type="text"
+            id="expense-note"
+            placeholder="Add Note (Optional)"
+          />
+          <input type="date" id="expense-date" />
+          <button class="submit" id="add-expense">Add Expense</button>
+        </div>
+
+        <!-- Budget Summary -->
+        <div class="output-container">
+          <div>
+            <p>Total Budget</p>
+            <span id="amount">0</span>
+          </div>
+          <div>
+            <p>Total Income</p>
+            <span id="total-income">0</span>
+          </div>
+          <div>
+            <p>Total Expenses</p>
+            <span id="total-expenses">0</span>
+          </div>
+          <div>
+            <p>Balance</p>
+            <span id="balance-amount">0</span>
+          </div>
+        </div>
+
+        <!-- Transaction Table -->
+        <div class="transaction-table">
+          <h3>Transaction History</h3>
+          <table id="transaction-list">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Note</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Rows will be added dynamically -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Graph Section -->
+        <div class="graph-container">
+          <h3>Monthly Expense Graph</h3>
+          <canvas id="expense-chart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
