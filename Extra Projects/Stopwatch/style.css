@@ -1,0 +1,68 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.stopwatch {
+  background: rgba(34, 34, 34, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  width: 350px;
+}
+
+#stopwatch {
+  font-size: 3.5rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.buttons button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+.start {
+  background: linear-gradient(135deg, #00c853, #00e676);
+}
+
+.stop {
+  background: linear-gradient(135deg, #d50000, #ff1744);
+}
+
+.reset {
+  background: linear-gradient(135deg, #2979ff, #2962ff);
+}
+
+.buttons button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.buttons button:active {
+  transform: scale(0.95);
+}
